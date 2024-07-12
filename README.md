@@ -22,6 +22,7 @@ ___
 - We have to create an IAM Lambda execution role and attach it to the lambda function which allows our function runtime to interact with Dynamo DB to the get the data.
 - Users can access the API Gateway endpoint(https) deployment link which will trigger the lambda function to get the resume data from dynamoDB
 - Use this [schema](https://jsonresume.org/schema) for customising your resume.
+- Resume api endpoint: [get-my-resume](https://6gbptkzmz3.execute-api.us-east-1.amazonaws.com/resume)
 
 
 ### Documentation links to lookout 👀 
