@@ -2,15 +2,18 @@
 
 This repo contains my solution for [cloud resume api](https://cloudresumeapi.dev) challenge using AWS Cloud and Google Cloud Platform.
 
-## Technologies/Services 🚀
+## 🥇 AWS Cloud Solution
+
+### Technologies/Services 🚀
 
 - Web server: Node.js
-- Serverless Service: AWS Lambda and GCP Cloud Functions
-- Database: AWS Dynamo DB and GCP Firestore
+- Serverless Service: AWS Lambda
+- Database: AWS Dynamo DB
 - Nodejs version: v20.14.0 LTS
 - CI: Github Actions
+___
 
-## AWS Cloud Solution
+### Architecture and steps to complete the task
 
 <img width="800" alt="image" src="https://github.com/rohit1101/Cloud-Resume-Api-/assets/37110560/d727e75b-4a0f-4def-a909-e9d500833643">
 
@@ -21,7 +24,13 @@ This repo contains my solution for [cloud resume api](https://cloudresumeapi.dev
 - Use this [schema](https://jsonresume.org/schema) for customising your resume.
 
 
-Documentation links to lookout 👀 
+### Documentation links to lookout 👀 
 
 - [dynamodb node js api](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-lib-dynamodb/)
 - [DynamoDB-101](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStartedDynamoDB.html)
+
+---
+
+## 🥇 GCP Solution
+
+🚧 Work in progress... 
