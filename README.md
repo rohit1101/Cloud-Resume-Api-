@@ -7,8 +7,8 @@ This repo contains my solution for [cloud resume api](https://cloudresumeapi.dev
 ### Technologies/Services 🚀
 
 - Web server: Node.js
-- Serverless Service: AWS Lambda
-- Database: AWS Dynamo DB
+- Serverless Service: AWS Lambda, GCP Cloud Functions
+- Database: AWS Dynamo DB, GCP Cloud Firestore
 - Nodejs version: v20.14.0 LTS
 - CI: Github Actions
 ___
@@ -34,4 +34,34 @@ ___
 
 ## 🥇 GCP Solution
 
-🚧 Work in progress... 
+Finally after a bit of delay, I have implemented the GCP solution for this challenge.
+
+I wanted to implement multi-cloud solution to learn another cloud provider by transferring knowledge which I have already gained with AWS and to know the pros and cons of GCP and AWS.
+
+### Architecture and steps to complete the task
+
+<img width="760" alt="image" src="https://github.com/user-attachments/assets/f0bdff57-b8ab-4915-93de-7b47756e9046">
+
+- The way I implemented the solution for this challenge is by setting up an HTTP public GCP Cloud function using node.js which will fetch the data from Firestore
+- We have to create a service account with very minimal permissions to make Cloud Function communicate with Cloud Firestore DB; the following are the permissions to accomplish the task:
+  ```txt
+  Cloud Functions Admin
+  Cloud Run Invoker
+  Firebase Admin
+  ```
+- Make sure you provide only `read-only-access` for the Firestore DB to avoid public write access
+```JavaScript
+  rules_version = '2';
+  service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+ }  
+```
+- Users can access the Cloud Function with the functions URL: [get-my-resume](https://us-central1-lively-encoder-427806-d3.cloudfunctions.net/cloud-resume)
+- Use this [schema](https://jsonresume.org/schema) for customising your resume.
+
+
